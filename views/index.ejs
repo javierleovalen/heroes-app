@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <link rel="stylesheet" href="/styles/style.css">
+
+</head>
+
+<body>
+
+    <h2>Heroes App</h2>
+
+
+    <section>
+
+        <% heroes.forEach(heroe=> { %>
+
+
+            <article class="<%= heroe.id %>">
+                <a href="/detalle/<%= heroe.id %>">
+                    <h3>
+                        <%= heroe.superhero %>
+                    </h3>
+                    <img src="/images/<%= heroe.id %>.jpg" alt="imagen de <%= heroe.superhero %>" width="200px">
+                </a>
+                <ul>
+
+                    <li>
+                        <% if (heroes.publisher=== "DC-Comics"){ %>
+                            <a href="/publisher/dc">
+                                <%= heroe.publisher %>
+                            </a>
+
+                       <% } else { %>
+
+                         <a href="/publisher/marvel">
+                            <%= heroe.publisher %>
+                            </a>    
+
+                            <% } %>
+                        </a>
+                    </li>
+                    <li>
+                        <%= heroe.alter_ego %>
+                    </li>
+                </ul>
+
+            </article>
+
+            <% }); %>
+
+
+    </section>
+
+</body>
+
+</html>
