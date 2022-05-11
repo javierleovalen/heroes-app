@@ -1,9 +1,11 @@
 const express = require('express')
 const app = express()
-const port = 3000
+const port = 3030
 const mainRouter = require('./routes/index');
+const methodOverride = require('method-override');
 
-
+// Argumento para usar put y delete //
+app.use(methodOverride('_method'));
 
 // levantando el servidor //
 app.listen(process.env.POTR || port, () => {
